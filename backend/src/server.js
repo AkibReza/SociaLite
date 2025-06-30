@@ -38,10 +38,7 @@ const io = socketIo(server, {
 const path = require("path");
 
 if (process.env.FIREBASE_SERVICE_ACCOUNT_KEY) {
-  const serviceAccountPath = path.resolve(
-    __dirname,
-    process.env.FIREBASE_SERVICE_ACCOUNT_KEY
-  );
+  const serviceAccountPath = "/etc/secrets/firebaseKey.json";
   const serviceAccount = require(serviceAccountPath);
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
