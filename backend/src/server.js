@@ -28,7 +28,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: process.env.FRONTEND_URL || "http://localhost:5173",
+    origin: process.env.FRONTEND_URL || "https://socialitenew.netlify.app/",
     methods: ["GET", "POST"],
     credentials: true,
   },
@@ -49,7 +49,7 @@ if (process.env.FIREBASE_SERVICE_ACCOUNT_KEY) {
 app.use(helmet());
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:5173",
+    origin: process.env.FRONTEND_URL || "https://socialitenew.netlify.app/",
     credentials: true,
   })
 );
